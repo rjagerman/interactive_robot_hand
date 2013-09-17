@@ -1,6 +1,10 @@
 CMakeCache.txt
 CMakeFiles
 build
+bin
+lib
+catkin_generated
+gtest
 Makefile
 cmake_install.cmake
 install_manifest.txt
