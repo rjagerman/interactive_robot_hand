@@ -6,5 +6,6 @@ lib
 catkin_generated
 gtest
 Makefile
+CMakeLists.txt.user
 cmake_install.cmake
 install_manifest.txt
