@@ -37,6 +37,10 @@ class Gripper
     /// Spin
     /** Alternatively drives the motor clockwise and counterclockwise */
     void spin();
+
+    /// Activate the gripper hand
+    /** \param closed Whether to close (true) the hand or open (false) the hand */
+    void grip(bool closed);
 };    
 
 #endif /* __ROSASSIGNMENT1_GRIP_H */

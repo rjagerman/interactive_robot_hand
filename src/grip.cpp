@@ -33,18 +33,23 @@ void Gripper::init(char *path)
 void Gripper::spin()
 {
   ros::Rate loop_rate(1); //herz;
-  int dir = -1;
+  bool close = true;
 
   while (ros::ok())
   {
-    motor_->setTorque(dir*0.005); // nM
     std::cin.clear();
     std::cin.get();
-    dir = -dir;
+    this->grip(close);
+    close = !close;
     loop_rate.sleep();
   }
 
   motor_->setTorque(0);
+}
+
+void Gripper::grip(bool close)
+{
+    motor_->setTorque(close ? -0.005 : 0.005);
 }
 
 int main(int argc, char **argv)
