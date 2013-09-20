@@ -31,7 +31,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 #include_directories(include ${catkin_INCLUDE_DIRS} ${TinyXML_INCLUDE_DIRS})
 
-rosbuild_add_executable(grip src/grip.cpp)
-target_link_libraries(grip tinyxml)
+#rosbuild_add_executable(grip src/grip.cpp)
+
+rosbuild_add_library(main src/RosMotor.cpp)
+rosbuild_add_library(main src/Hand.cpp)
+rosbuild_add_executable(main src/main.cpp)
 
 
