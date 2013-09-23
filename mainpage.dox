@@ -2,12 +2,11 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b assignment1 
+\b interactive_robot_hand 
 
 <!-- 
-Provide an overview of your package.
--->
-
+This is the package for the interactive robot hand. It is the first assignment
+for the minor robotics
 -->
 
 
