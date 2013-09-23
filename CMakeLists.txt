@@ -33,8 +33,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 #rosbuild_add_executable(grip src/grip.cpp)
 
-rosbuild_add_library(main src/RosMotor.cpp)
-rosbuild_add_library(main src/Hand.cpp)
-rosbuild_add_executable(main src/main.cpp)
+#rosbuild_add_library(hand src/RosMotor.cpp)
+rosbuild_add_executable(hand src/Hand.cpp)
+rosbuild_add_executable(brain src/Brain.cpp)
+
+#rosbuild_add_executable(main src/main.cpp)
 
 
