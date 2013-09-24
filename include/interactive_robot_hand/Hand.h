@@ -27,6 +27,7 @@ namespace interactive_robot_hand {
     CDxlConfig *config;         ///< The motor configuration
     LxSerial* serial_port;      ///< The serial port
     ros::Subscriber subscriber; ///< The subscriber
+    bool gripping;              ///< State of the hand
 
   public:
     

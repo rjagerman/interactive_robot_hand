@@ -25,7 +25,10 @@ Hand::Hand() : Node() {
   motor->set3MxlMode(CURRENT_MODE);
   
   // Start subscription
-  subscriber = nh.subscribe("/brain/grip", 10, &Hand::grip, this);
+  subscriber = nh.subscribe("/brain/grip", 1, &Hand::grip, this);
+  
+  // Initialize state of the hand
+  gripping = false;
   
   // Notify user
   ROS_INFO("Created hand");
@@ -41,12 +44,31 @@ Hand::~Hand(void) {
 }
 
 void Hand::spin(void) {
+  /*ros::Rate loop_rate(120);
+  while(ros::ok()) {
+    motor->getCurrent();
+    motor->getState();
+    motor->getStatus();
+    //ROS_INFO("Present pos [%f]", motor->presentPos());
+    //ROS_INFO("Present torque [%f]", motor->presentTorque());
+    //ROS_INFO("Present speed [%f]", motor->presentSpeed());
+    ROS_INFO("Present current [%f]", motor->presentCurrent());
+    //ROS_INFO("Present temp [%f]", motor->presentTemp());
+    ROS_INFO("Present voltage [%f]", motor->presentVoltage());
+    //ROS_INFO("Present load [%f]", motor->presentLoad());
+    ros::spinOnce();
+    loop_rate.sleep();
+  }*/
   ros::spin();
 }
 
 void Hand::grip(const std_msgs::Float32::ConstPtr& msg) {
   ROS_INFO("Received force [%f]", msg->data);
-  motor->setCurrent(msg->data);
+  if(!gripping) {
+    float force = msg->data;
+    float current = -0.5 * force;
+    motor->setCurrent(current);
+  }
 }
 
 int main(int argc, char **argv) {

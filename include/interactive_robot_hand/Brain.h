@@ -15,6 +15,7 @@
 
 #include <ros/ros.h>
 #include <interactive_robot_hand/Node.h>
+#include <std_msgs/Float32.h>
 
 namespace interactive_robot_hand {
   
@@ -22,7 +23,9 @@ namespace interactive_robot_hand {
     
   protected:
     
-    ros::Publisher publisher; ///< The publisher
+    ros::Publisher publisher;  ///< The publisher
+    ros::Subscriber subscriber;///< The subscriber
+    bool active;               ///< Whether the brain is ready to grasp an object
 
   public:
     /// Creates a new brain
@@ -33,6 +36,14 @@ namespace interactive_robot_hand {
     
     /// Publishes messages on a timed interval, telling the hand to move
     void spin();
+    
+    /**
+     * Callback handler for seeing objects at a distance. The distance is in mm's and
+     * is send by the eyes.
+     * \brief Callback handler for seeing objects at a distance
+     * \param distance The distance at which the object is perceived (in mm's)
+     */
+    void see(const std_msgs::Float32::ConstPtr& distance);
 
   };
 
