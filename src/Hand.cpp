@@ -26,10 +26,7 @@ Hand::Hand() : Node() {
   
   // Start subscription
   subscriber = nh.subscribe("/brain/grip", 1, &Hand::grip, this);
-  
-  // Initialize state of the hand
-  gripping = false;
-  
+
   // Notify user
   ROS_INFO("Created hand");
 }
@@ -64,11 +61,10 @@ void Hand::spin(void) {
 
 void Hand::grip(const std_msgs::Float32::ConstPtr& msg) {
   ROS_INFO("Received force [%f]", msg->data);
-  if(!gripping) {
     float force = msg->data;
     float current = -0.5 * force;
     motor->setCurrent(current);
-  }
+  
 }
 
 int main(int argc, char **argv) {

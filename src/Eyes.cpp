@@ -25,11 +25,11 @@ void Eyes::spin() {
   ros::Rate loop_rate(10);
   while(ros::ok()) {
     
-    // Create grip force in newtons
+    // Create distance in mm
     std_msgs::Float32 distance;
     distance.data = 26873.548 * pow(phidget.getSensorValue(sensor_id), -0.99925);
     
-    // Publish force
+    // Publish distance
     publisher.publish(distance);
     ros::spinOnce();
     ROS_INFO("Published distance [%f]", distance.data);
