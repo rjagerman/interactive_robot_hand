@@ -62,7 +62,7 @@ void Hand::spin(void) {
 void Hand::grip(const std_msgs::Float32::ConstPtr& msg) {
   ROS_INFO("Received force [%f]", msg->data);
     float force = msg->data;
-    float current = -0.5 * force;
+    float current = -(0.030246* force-0.0270571);
     motor->setCurrent(current);
   
 }
