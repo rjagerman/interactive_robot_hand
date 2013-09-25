@@ -26,6 +26,7 @@ namespace interactive_robot_hand {
     ros::Publisher publisher;  ///< The publisher
     ros::Subscriber subscriber;///< The subscriber
     bool active;               ///< Whether the brain is ready to grasp an object
+    float newton;              ///< The amount of force to grasp the object with
 
   public:
     /// Creates a new brain
