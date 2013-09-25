@@ -19,7 +19,7 @@ void Brain::see(const std_msgs::Float32::ConstPtr& distance) {
   ROS_INFO("Seeing object at %.2fmm", distance->data);
   
   // Grasp the object when it is close
-  if(distance->data < 90.0 && active) {
+  if(distance->data < 85.0 && active) {
     
     // Create grip force in newtons
     std_msgs::Float32 force;
