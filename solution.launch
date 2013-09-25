@@ -1,0 +1,5 @@
+<launch>
+  <node name="hand" pkg="interactive_robot_hand" type="hand" />
+  <node name="eyes" pkg="interactive_robot_hand" type="eyes" />
+  <node name="brain" pkg="interactive_robot_hand" type="brain" output="screen" />
+</launch>
