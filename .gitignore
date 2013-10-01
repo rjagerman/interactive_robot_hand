@@ -13,3 +13,5 @@ install_manifest.txt
 *.kdev4
 *.zargo~
 *~
+*_gen
+

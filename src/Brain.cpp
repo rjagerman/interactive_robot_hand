@@ -3,7 +3,7 @@
 #include <std_msgs/Float32.h>
 #include <stdio.h>
 
-using namespace interactive_robot_hand;
+using namespace robot_hand;
 
 Brain::Brain() : Node() {
   publisher = nh.advertise<std_msgs::Float32>("grip", 1);

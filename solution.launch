@@ -1,5 +1,13 @@
 <launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find interactive_robot_hand)/urdf/gripper.xacro" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find interactive_robot_hand)/urdf/urdf.rviz" />
+
   <node name="hand" pkg="interactive_robot_hand" type="hand" />
   <node name="eyes" pkg="interactive_robot_hand" type="eyes" />
+
+  <node name="cylinder" pkg="interactive_robot_hand" type="cylinder" output="screen" />
+
   <node name="brain" pkg="interactive_robot_hand" type="brain" output="screen" />
 </launch>

@@ -5,35 +5,33 @@
  * 
  * @section DESCRIPTION
  * 
- * The brain class represents the logic processing unit. It subscribes to
- * several sensors, obtaining input information. It uses the obtained
- * information to publish events on different topics, in particular it notifies
- * the hand that it should squeeze with a certain force.
+ * The cylinder class represents a cylinder in the visualization. It reads distance
+ * from the eyes and places a cylinder at the correct location in the visualization.
  */
-#ifndef BRAIN_H
-#define BRAIN_H
+#ifndef CYLINDER_H
+#define CYLINDER_H
 
 #include <ros/ros.h>
 #include <interactive_robot_hand/Node.h>
+#include <visualization_msgs/Marker.h>
 #include <std_msgs/Float32.h>
 
-namespace robot_hand {
+namespace visualization {
   
-  class Brain : public Node {
+  class Cylinder : public Node {
     
   protected:
     
     ros::Publisher publisher;  ///< The publisher
     ros::Subscriber subscriber;///< The subscriber
-    bool active;               ///< Whether the brain is ready to grasp an object
-    float newton;              ///< The amount of force to grasp the object with
+    visualization_msgs::Marker cylinder; ///< The cylinder
 
   public:
-    /// Creates a new brain
-    Brain();
+    /// Creates a new cylinder
+    Cylinder();
     
-    /// Destroys the brain
-    ~Brain();
+    /// Destroys the cylinder
+    ~Cylinder();
     
     /// Publishes messages on a timed interval, telling the hand to move
     void spin();
@@ -50,4 +48,4 @@ namespace robot_hand {
 
 }
 
-#endif // BRAIN_H
+#endif // CYLINDER_H

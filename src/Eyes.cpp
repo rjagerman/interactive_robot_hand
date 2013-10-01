@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <math.h>
 
-using namespace interactive_robot_hand;
+using namespace robot_hand;
 
 Eyes::Eyes() : Node() {
   phidget.init(-1);

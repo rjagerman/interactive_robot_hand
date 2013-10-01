@@ -17,7 +17,7 @@
 #include <interactive_robot_hand/Node.h>
 #include <phidget_ik/phidget_ik.h>
 
-namespace interactive_robot_hand {
+namespace robot_hand {
 
   class Eyes : public Node {
     

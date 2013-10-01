@@ -9,6 +9,8 @@ include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
 #set(ROS_BUILD_TYPE RelWithDebInfo)
 
+
+#rosbuild_add_generated_msgs(See.msg)
 rosbuild_init()
 
 #set the default path for built executables to the "bin" directory
@@ -17,27 +19,17 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 #uncomment if you have defined messages
-#rosbuild_genmsg()
+rosbuild_genmsg()
 #uncomment if you have defined services
 #rosbuild_gensrv()
 
-#common commands for building c++ executables and libraries
-#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
-#target_link_libraries(${PROJECT_NAME} another_library)
-#rosbuild_add_boost_directories()
-#rosbuild_link_boost(${PROJECT_NAME} thread)
-#rosbuild_add_executable(example examples/example.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
-
-#include_directories(include ${catkin_INCLUDE_DIRS} ${TinyXML_INCLUDE_DIRS})
-
-#rosbuild_add_executable(grip src/grip.cpp)
-
-#rosbuild_add_library(hand src/RosMotor.cpp)
+# Build executables for main nodes
 rosbuild_add_executable(hand src/Hand.cpp)
 rosbuild_add_executable(brain src/Brain.cpp)
 rosbuild_add_executable(eyes src/Eyes.cpp)
 
-#rosbuild_add_executable(main src/main.cpp)
+# Build executables for visualization
+rosbuild_add_executable(cylinder src/Cylinder.cpp)
+
 
 

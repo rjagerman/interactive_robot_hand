@@ -14,9 +14,7 @@
 
 #include <ros/ros.h>
 
-namespace interactive_robot_hand {
-
-  class Node {
+class Node {
     
   protected:
     
@@ -38,8 +36,6 @@ namespace interactive_robot_hand {
     /// A method that should contain the ROS logic
     virtual void spin() = 0;
     
-  };
-
-}
+};
 
 #endif // NODE_H

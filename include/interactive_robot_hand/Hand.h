@@ -18,7 +18,7 @@
 #include <CDxlGroup.h>
 #include <interactive_robot_hand/Node.h>
 
-namespace interactive_robot_hand {
+namespace robot_hand {
 
   class Hand : public Node {
     

@@ -3,7 +3,7 @@
 #include <threemxl/C3mxlROS.h>
 #include <std_msgs/Float32.h>
 
-using namespace interactive_robot_hand;
+using namespace robot_hand;
 
 Hand::Hand() : Node() {
   
@@ -41,18 +41,14 @@ Hand::~Hand(void) {
 }
 
 void Hand::spin(void) {
-  /*ros::Rate loop_rate(120);
+  /*ros::Rate loop_rate(30);
   while(ros::ok()) {
-    motor->getCurrent();
+    //motor->getCurrent();
     motor->getState();
-    motor->getStatus();
-    //ROS_INFO("Present pos [%f]", motor->presentPos());
-    //ROS_INFO("Present torque [%f]", motor->presentTorque());
-    //ROS_INFO("Present speed [%f]", motor->presentSpeed());
-    ROS_INFO("Present current [%f]", motor->presentCurrent());
-    //ROS_INFO("Present temp [%f]", motor->presentTemp());
+    ROS_INFO("Present pos [%f]", motor->presentPos());
+    ROS_INFO("Present speed [%f]", motor->presentSpeed());
     ROS_INFO("Present voltage [%f]", motor->presentVoltage());
-    //ROS_INFO("Present load [%f]", motor->presentLoad());
+    motor->setPIDCurrent(6.0, 1.0, 1.0, 0.5, false);
     ros::spinOnce();
     loop_rate.sleep();
   }*/
@@ -61,11 +57,10 @@ void Hand::spin(void) {
 
 void Hand::grip(const std_msgs::Float32::ConstPtr& msg) {
   ROS_INFO("Received force [%f]", msg->data);
-    float force = msg->data;
-    float current = -(0.030246* force-0.0270571);
-    ROS_INFO("Generating current [%f]", current);
-    motor->setCurrent(current);
-  
+  float force = msg->data;
+  float current = -(0.030246* force-0.0270571);
+  ROS_INFO("Generating current [%f]", current);
+  motor->setCurrent(current);
 }
 
 int main(int argc, char **argv) {
