@@ -52,12 +52,22 @@ Cylinder::~Cylinder() {
 
 void Cylinder::see(const std_msgs::Float32::ConstPtr& distance) {
   
+  // Make the cylinder fade out if it is out of range
+  if(distance->data > 300.0 && distance->data < 400.0) {
+    cylinder.color.a = 1.0 - (distance->data-300.0)/100.0;
+  } else if(distance->data >= 400.0) {
+    cylinder.color.a = 0.0;
+  } else {
+    cylinder.color.a = 1.0;
+  }
+  
   // Update the cylinder position
   cylinder.pose.position.y = (distance->data/1000.0);
   cylinder.header.frame_id = "/base_link";
   cylinder.header.stamp = ros::Time::now();
   publisher.publish(cylinder);
   ros::spinOnce();
+  
 }
 
 void Cylinder::spin() {

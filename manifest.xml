@@ -13,6 +13,9 @@
   <depend package="threemxl"/>
   <depend package="phidget_ik"/>
   <depend package="urdf"/>
+  <depend package="message_generation"/>
+  <depend package="rospy"/>
+  <depend package="genmsg"/>
 </package>
 
 

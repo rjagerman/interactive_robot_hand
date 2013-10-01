@@ -14,4 +14,4 @@ install_manifest.txt
 *.zargo~
 *~
 *_gen
-
+*.py
