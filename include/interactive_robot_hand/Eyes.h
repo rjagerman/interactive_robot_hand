@@ -13,8 +13,8 @@
 #define EYES_H
 
 #include <ros/ros.h>
-#include <std_msgs/Float32.h>
 #include <interactive_robot_hand/Node.h>
+#include <interactive_robot_hand/See.h>
 #include <phidget_ik/phidget_ik.h>
 
 namespace robot_hand {

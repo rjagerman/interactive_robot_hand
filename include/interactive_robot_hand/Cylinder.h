@@ -14,7 +14,8 @@
 #include <ros/ros.h>
 #include <interactive_robot_hand/Node.h>
 #include <visualization_msgs/Marker.h>
-#include <std_msgs/Float32.h>
+#include <interactive_robot_hand/See.h>
+#include <interactive_robot_hand/HandState.h>
 
 namespace visualization {
   
@@ -25,6 +26,8 @@ namespace visualization {
     ros::Publisher publisher;  ///< The publisher
     ros::Subscriber subscriber;///< The subscriber
     visualization_msgs::Marker cylinder; ///< The cylinder
+    ros::Subscriber hand_sub;  ///< The hand subscriber
+    bool free;                 ///< Describes whether the cylinder is free or trapped in the hand
 
   public:
     /// Creates a new cylinder
@@ -37,12 +40,18 @@ namespace visualization {
     void spin();
     
     /**
-     * Callback handler for seeing objects at a distance. The distance is in mm's and
-     * is send by the eyes.
+     * Callback handler for seeing objects at a distance. The see message from
+     * the eyes describes a distance in millimeters
      * \brief Callback handler for seeing objects at a distance
-     * \param distance The distance at which the object is perceived (in mm's)
+     * \param message The message send by the eyes
      */
-    void see(const std_msgs::Float32::ConstPtr& distance);
+    void see(const interactive_robot_hand::See::ConstPtr& message);
+    
+    /**
+     * Callback handler for the current hand state when it grips
+     * \param hand The hand state
+     */
+    void grip(const interactive_robot_hand::HandState::ConstPtr& hand);
 
   };
 

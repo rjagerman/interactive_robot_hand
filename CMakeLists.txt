@@ -30,6 +30,6 @@ rosbuild_add_executable(eyes src/Eyes.cpp)
 
 # Build executables for visualization
 rosbuild_add_executable(cylinder src/Cylinder.cpp)
-
+rosbuild_add_executable(gripper src/Gripper.cpp)
 
 

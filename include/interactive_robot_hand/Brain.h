@@ -15,7 +15,7 @@
 
 #include <ros/ros.h>
 #include <interactive_robot_hand/Node.h>
-#include <std_msgs/Float32.h>
+#include <interactive_robot_hand/See.h>
 
 namespace robot_hand {
   
@@ -26,7 +26,15 @@ namespace robot_hand {
     ros::Publisher publisher;  ///< The publisher
     ros::Subscriber subscriber;///< The subscriber
     bool active;               ///< Whether the brain is ready to grasp an object
-    float newton;              ///< The amount of force to grasp the object with
+    float force;               ///< The amount of force (in newton) to grasp the object with
+    
+    /**
+     * Sends the correct command to the hand for closing or opening the handler
+     * at the specified force.
+     * \param force The amount of force (in newton) to apply
+     * \param open True to open the hand, false otherwise (default: false)
+     */
+    void grip(float force, bool open = false);
 
   public:
     /// Creates a new brain
@@ -39,12 +47,12 @@ namespace robot_hand {
     void spin();
     
     /**
-     * Callback handler for seeing objects at a distance. The distance is in mm's and
-     * is send by the eyes.
+     * Callback handler for seeing objects at a distance. The see message from
+     * the eyes describes a distance in millimeters
      * \brief Callback handler for seeing objects at a distance
-     * \param distance The distance at which the object is perceived (in mm's)
+     * \param message The message send by the eyes
      */
-    void see(const std_msgs::Float32::ConstPtr& distance);
+    void see(const interactive_robot_hand::See::ConstPtr& message);
 
   };
 

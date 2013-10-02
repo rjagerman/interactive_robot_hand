@@ -13,7 +13,8 @@
 #define HAND_H
 
 #include <ros/ros.h>
-#include <std_msgs/Float32.h>
+#include <interactive_robot_hand/Grip.h>
+#include <interactive_robot_hand/HandState.h>
 #include <CDxlGeneric.h>
 #include <CDxlGroup.h>
 #include <interactive_robot_hand/Node.h>
@@ -27,6 +28,8 @@ namespace robot_hand {
     CDxlConfig *config;         ///< The motor configuration
     LxSerial* serial_port;      ///< The serial port
     ros::Subscriber subscriber; ///< The subscriber
+    ros::Publisher publisher;   ///< The publisher
+    interactive_robot_hand::HandState state; ///< The current state of the hand (open or closed)
     bool gripping;              ///< State of the hand
 
   public:
@@ -45,9 +48,9 @@ namespace robot_hand {
      * function computes the correct current and sends the motor commands to
      * the 3mxl board.
      * \brief Callback function for grip messages
-     * \param force The amount of force to apply for the grip
+     * \param message The message as send by the brain
      */
-    void grip(const std_msgs::Float32::ConstPtr& force);
+    void grip(const interactive_robot_hand::Grip::ConstPtr& message);
     
   };
 

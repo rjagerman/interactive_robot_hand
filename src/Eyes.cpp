@@ -1,7 +1,8 @@
 
 #include <ros/ros.h>
 #include <interactive_robot_hand/Eyes.h>
-#include <std_msgs/Float32.h>
+#include <interactive_robot_hand/See.h>
+#include <interactive_robot_hand/Node.h>
 #include <stdexcept>
 #include <math.h>
 
@@ -14,7 +15,7 @@ Eyes::Eyes() : Node() {
     ROS_ERROR("Phidget error: %d", phidget.getLastError());
   }
   sensor_id = 0;
-  publisher = nh.advertise<std_msgs::Float32>("see", 1);
+  publisher = nh.advertise<interactive_robot_hand::See>("see", 1);
 }
 
 Eyes::~Eyes() {
@@ -26,13 +27,13 @@ void Eyes::spin() {
   while(ros::ok()) {
     
     // Create distance in mm
-    std_msgs::Float32 distance;
-    distance.data = 26873.548 * pow(phidget.getSensorValue(sensor_id), -0.99925);
+    interactive_robot_hand::See see;
+    see.distance = 26873.548 * pow(phidget.getSensorValue(sensor_id), -0.99925);
     
     // Publish distance
-    publisher.publish(distance);
+    publisher.publish(see);
     ros::spinOnce();
-    ROS_INFO("Published distance [%f]", distance.data);
+    ROS_INFO("Published distance [%f]", see.distance);
     
     loop_rate.sleep();
   }
