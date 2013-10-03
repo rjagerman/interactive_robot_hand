@@ -2,12 +2,6 @@
  * @file
  * @author Rolf Jagerman
  * @version 1.0
- * 
- * @section DESCRIPTION
- * 
- * The eyes are a wrapper for the phidget interface kit. It gives easy access
- * to the underlying sensor and contains a formula to convert the sensor value
- * to mm's. The distance gets published on the channel see.
  */
 #ifndef EYES_H
 #define EYES_H
@@ -19,12 +13,17 @@
 
 namespace robot_hand {
 
+  /**
+   * The eyes are a wrapper for the phidget interface kit. It gives easy access
+   * to the underlying sensor and contains a formula to convert the sensor value
+   * to mm's. The distance gets published on the channel see.
+   */
   class Eyes : public Node {
     
   protected:
     PhidgetIK phidget;         ///< The phidget interface
     int sensor_id;             ///< The sensor id
-    ros::Publisher publisher;  ///< The publisher
+    ros::Publisher publisher;  ///< The publisher for the see messages
 
   public:
     
@@ -34,7 +33,10 @@ namespace robot_hand {
     /// Destroys the eyes
     ~Eyes();
     
-    /// Handles the ros logic
+    /**
+     * Continuously reads information from the phidget_ik board and sends messages
+     * over the /eyes/see topic stating there is an object at a specific distance
+     */
     void spin();
     
   };

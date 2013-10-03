@@ -2,12 +2,6 @@
  * @file
  * @author Rolf Jagerman
  * @version 1.0
- * 
- * @section DESCRIPTION
- * 
- * The hand is a wrapper for the 3mxl controller. It gives easy access to the
- * underlying motor and is able to grip objects with the hand using a specific
- * force. It internally computes the correct current for the given force.
  */
 #ifndef HAND_H
 #define HAND_H
@@ -21,14 +15,19 @@
 
 namespace robot_hand {
 
+  /**
+   * The hand is a wrapper for the 3mxl controller. It gives easy access to the
+   * underlying motor and is able to grip objects with the hand using a specific
+   * force. It internally computes the correct current for the given force.
+   */
   class Hand : public Node {
     
   protected:
     CDxlGeneric *motor;         ///< The motor interface
     CDxlConfig *config;         ///< The motor configuration
     LxSerial* serial_port;      ///< The serial port
-    ros::Subscriber subscriber; ///< The subscriber
-    ros::Publisher publisher;   ///< The publisher
+    ros::Subscriber subscriber; ///< The subscriber for the grip messages from the brain
+    ros::Publisher publisher;   ///< The publisher for the handstate messages
     interactive_robot_hand::HandState state; ///< The current state of the hand (open or closed)
     bool gripping;              ///< State of the hand
 
@@ -39,9 +38,6 @@ namespace robot_hand {
     
     /// Destroys the hand
     ~Hand();
-    
-    /// Handles the ros logic
-    void spin();
     
     /**
      * Callback function for grip messages specifying a specific force. This

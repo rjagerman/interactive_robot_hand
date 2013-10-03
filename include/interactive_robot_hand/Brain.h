@@ -2,13 +2,6 @@
  * @file
  * @author Rolf Jagerman
  * @version 1.0
- * 
- * @section DESCRIPTION
- * 
- * The brain class represents the logic processing unit. It subscribes to
- * several sensors, obtaining input information. It uses the obtained
- * information to publish events on different topics, in particular it notifies
- * the hand that it should squeeze with a certain force.
  */
 #ifndef BRAIN_H
 #define BRAIN_H
@@ -19,12 +12,18 @@
 
 namespace robot_hand {
   
+  /**
+   * The brain class represents the logic processing unit. It subscribes to
+   * several sensors, obtaining input information. It uses the obtained
+   * information to publish events on different topics, in particular it notifies
+   * the hand that it should squeeze with a certain force.
+   */
   class Brain : public Node {
     
   protected:
     
-    ros::Publisher publisher;  ///< The publisher
-    ros::Subscriber subscriber;///< The subscriber
+    ros::Publisher publisher;  ///< The publisher for the grip messages
+    ros::Subscriber subscriber;///< The subscriber for the eyes' see messages
     bool active;               ///< Whether the brain is ready to grasp an object
     float force;               ///< The amount of force (in newton) to grasp the object with
     
@@ -43,7 +42,12 @@ namespace robot_hand {
     /// Destroys the brain
     ~Brain();
     
-    /// Publishes messages on a timed interval, telling the hand to move
+    /**
+     * Reads input from the user to obtain the amount of force they want to close
+     * the hand with. After the user enters this information, this method waits
+     * until an object was close enough for the hand to close. Afterwards this
+     * function resets, allowing the user to enter a new force.
+     */
     void spin();
     
     /**

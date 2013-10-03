@@ -42,10 +42,6 @@ Hand::~Hand(void) {
   ROS_INFO("Deleted hand");
 }
 
-void Hand::spin(void) {
-  ros::spin();
-}
-
 void Hand::grip(const interactive_robot_hand::Grip::ConstPtr& msg) {
   
   // Get the message force, invert it when opening the hand

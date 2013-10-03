@@ -2,18 +2,17 @@
  * @file
  * @author Rolf Jagerman
  * @version 1.0
- * 
- * @section DESCRIPTION
- * 
- * The node is an abstract base class for ROS nodes. It sets up a node handle
- * and offers an empty spin() method, which can be overridden. Overriding the
- * constructor makes it possible to customize the initialization of the class.
  */
 #ifndef NODE_H
 #define NODE_H
 
 #include <ros/ros.h>
 
+/**
+ * The node is an abstract base class for ROS nodes. It sets up a node handle
+ * and offers  default spin() method, which can be overridden. Overriding the
+ * constructor makes it possible to customize the initialization of the class.
+ */
 class Node {
     
   protected:
@@ -33,8 +32,14 @@ class Node {
       nh.shutdown();
     }
     
-    /// A method that should contain the ROS logic
-    virtual void spin() = 0;
+    /**
+     * This method should contain the ROS logic.
+     * The default implementation places ROS in a message handling
+     * loop (ros::spin()).
+     */
+    virtual void spin() {
+      ros::spin();
+    }
     
 };
 

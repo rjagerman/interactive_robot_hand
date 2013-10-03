@@ -10,7 +10,7 @@ Cylinder::Cylinder() : Node() {
   
   // Create publisher and subscriber
   publisher = nh.advertise<visualization_msgs::Marker>("/visualization_marker", 10);
-  subscriber = nh.subscribe<interactive_robot_hand::See>("/eyes/see", 1, &Cylinder::see, this);
+  eyes_sub = nh.subscribe<interactive_robot_hand::See>("/eyes/see", 1, &Cylinder::see, this);
   hand_sub = nh.subscribe<interactive_robot_hand::HandState>("/hand/state", 1, &Cylinder::grip, this);
   
   // Set cylinder options
@@ -35,7 +35,6 @@ Cylinder::Cylinder() : Node() {
   
   // Wait for a subscriber on the /visualization_marker topic to make
   // sure we only create the cylinder once rviz has actually started.
-  ROS_INFO("Waiting for visualization marker...");
   ros::Rate wait(1);
   while(ros::ok() && publisher.getNumSubscribers() == 0) {
     wait.sleep();
@@ -72,6 +71,9 @@ void Cylinder::see(const interactive_robot_hand::See::ConstPtr& message) {
   }
   
   // Update the position in rviz
+  // The y position gets updated with a smoothing function based on the previous position
+  // and new position. This prevents noise from the sensor distance from making the cylinder
+  // move irratically.
   cylinder.pose.position.y -= (cylinder.pose.position.y - (position)) / 2;
   cylinder.header.frame_id = "/base_link";
   cylinder.header.stamp = ros::Time::now();
@@ -80,20 +82,16 @@ void Cylinder::see(const interactive_robot_hand::See::ConstPtr& message) {
   
 }
 
-void Cylinder::grip(const interactive_robot_hand::HandState::ConstPtr& hand) {
-  free = hand->open;
-}
-
-void Cylinder::spin() {
-  ros::spin();
+void Cylinder::grip(const interactive_robot_hand::HandState::ConstPtr& hand_state) {
+  
+  // Set the cylinder free, allowing it to move, only if the hand is open
+  free = hand_state->open;
+  
 }
 
 int main(int argc, char **argv) {
   ros::init(argc, argv, "cylinder");
-  
-  Cylinder* cylinder = new Cylinder();
-  cylinder->spin();
-  delete cylinder;
-  
+  Cylinder cylinder;
+  cylinder.spin();
   return 0;
 }
