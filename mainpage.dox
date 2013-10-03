@@ -14,11 +14,11 @@ In particular it is necessary to have threemxl and phidget_ik correctly compiled
 and working.
 
 \subsection step2 Step 2: Compile the software
-To compile the software, simply run the following:
+To compile the software, use:
 <pre>rosmake interactive_robot_hand</pre>
 
 \subsection step3 Step 3: Run the software
-Run the complete solution by running the following:
+To run the software, use:
 <pre>roslaunch interactive_robot_hand solution.launch</pre>
 Note that you will be asked to enter a force into the console when everything works correctly.
 After entering a force, placing an object near the gripper will cause it to grasp that object with
