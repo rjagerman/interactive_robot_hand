@@ -1,0 +1,107 @@
+\section{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+
+
+{\ttfamily \#include $<$Node.\-h$>$}
+
+
+
+Inheritance diagram for Node\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classNode__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Node} ()
+\begin{DoxyCompactList}\small\item\em Creates a new node. \end{DoxyCompactList}\item 
+virtual void {\bf spin} ()
+\item 
+virtual {\bf $\sim$\-Node} ()
+\begin{DoxyCompactList}\small\item\em Destroys an existing node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle {\bf nh}
+\begin{DoxyCompactList}\small\item\em The node handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The node is an abstract base class for R\-O\-S nodes. It sets up a node handle and offers default \doxyref{spin()}{p.}{classNode_afd943edbdf46f7d90f31550d00e1b7b1} method, which can be overridden. Overriding the constructor makes it possible to customize the initialization of the class. 
+
+Definition at line 16 of file Node.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Node\-::\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classNode_ad7a34779cad45d997bfd6d3d8043c75f}
+
+
+Creates a new node. 
+
+
+
+Definition at line 26 of file Node.\-h.
+
+\index{Node@{Node}!$\sim$\-Node@{$\sim$\-Node}}
+\index{$\sim$\-Node@{$\sim$\-Node}!Node@{Node}}
+\subsubsection[{$\sim$\-Node}]{\setlength{\rightskip}{0pt plus 5cm}virtual Node\-::$\sim$\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classNode_af5e3fa79300bf5f3f2f3ecae6e795a94}
+
+
+Destroys an existing node. 
+
+
+
+Definition at line 31 of file Node.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Node@{Node}!spin@{spin}}
+\index{spin@{spin}!Node@{Node}}
+\subsubsection[{spin}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Node\-::spin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classNode_afd943edbdf46f7d90f31550d00e1b7b1}
+This method should contain the R\-O\-S logic. The default implementation places R\-O\-S in a message handling loop (ros\-::spin()). 
+
+Reimplemented in {\bf robot\-\_\-hand\-::\-Brain} \doxyref{}{p.}{classrobot__hand_1_1Brain_a815f20faeaa17d029f56b013603ab093}, {\bf visualization\-::\-Gripper} \doxyref{}{p.}{classvisualization_1_1Gripper_aff91d307ba3986f32dca834f296c7851}, and {\bf robot\-\_\-hand\-::\-Eyes} \doxyref{}{p.}{classrobot__hand_1_1Eyes_ad1a0a9c672629b2d52d120ecc74d8391}.
+
+
+
+Definition at line 40 of file Node.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Node@{Node}!nh@{nh}}
+\index{nh@{nh}!Node@{Node}}
+\subsubsection[{nh}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle Node\-::nh\hspace{0.3cm}{\ttfamily [protected]}}\label{classNode_af3f62c60745a57919cfe00f962ff0222}
+
+
+The node handle. 
+
+
+
+Definition at line 21 of file Node.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Node.\-h}\end{DoxyCompactItemize}

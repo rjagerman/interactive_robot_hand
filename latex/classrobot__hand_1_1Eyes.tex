@@ -1,0 +1,134 @@
+\section{robot\-\_\-hand\-:\-:Eyes Class Reference}
+\label{classrobot__hand_1_1Eyes}\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}}
+
+
+{\ttfamily \#include $<$Eyes.\-h$>$}
+
+
+
+Inheritance diagram for robot\-\_\-hand\-:\-:Eyes\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classrobot__hand_1_1Eyes__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Eyes} ()
+\begin{DoxyCompactList}\small\item\em Creates new eyes. \end{DoxyCompactList}\item 
+void {\bf spin} ()
+\item 
+{\bf $\sim$\-Eyes} ()
+\begin{DoxyCompactList}\small\item\em Destroys the eyes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Phidget\-I\-K {\bf phidget}
+\begin{DoxyCompactList}\small\item\em The phidget interface. \end{DoxyCompactList}\item 
+ros\-::\-Publisher {\bf publisher}
+\begin{DoxyCompactList}\small\item\em The publisher for the see messages. \end{DoxyCompactList}\item 
+int {\bf sensor\-\_\-id}
+\begin{DoxyCompactList}\small\item\em The sensor id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The eyes are a wrapper for the phidget interface kit. It gives easy access to the underlying sensor and contains a formula to convert the sensor value to mm's. The distance gets published on the channel see. 
+
+Definition at line 21 of file Eyes.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!Eyes@{Eyes}}
+\index{Eyes@{Eyes}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{Eyes}]{\setlength{\rightskip}{0pt plus 5cm}Eyes\-::\-Eyes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Eyes_ad1b726c4e531b240e6e5bf24dd402f4b}
+
+
+Creates new eyes. 
+
+
+
+Definition at line 11 of file Eyes.\-cpp.
+
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!$\sim$\-Eyes@{$\sim$\-Eyes}}
+\index{$\sim$\-Eyes@{$\sim$\-Eyes}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{$\sim$\-Eyes}]{\setlength{\rightskip}{0pt plus 5cm}Eyes\-::$\sim$\-Eyes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Eyes_a4b4f80a0782abc8fed36ae7448a5fa2e}
+
+
+Destroys the eyes. 
+
+
+
+Definition at line 21 of file Eyes.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!spin@{spin}}
+\index{spin@{spin}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{spin}]{\setlength{\rightskip}{0pt plus 5cm}void Eyes\-::spin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classrobot__hand_1_1Eyes_ad1a0a9c672629b2d52d120ecc74d8391}
+Continuously reads information from the phidget\-\_\-ik board and sends messages over the /eyes/see topic stating there is an object at a specific distance 
+
+Reimplemented from {\bf Node} \doxyref{}{p.}{classNode_afd943edbdf46f7d90f31550d00e1b7b1}.
+
+
+
+Definition at line 25 of file Eyes.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!phidget@{phidget}}
+\index{phidget@{phidget}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{phidget}]{\setlength{\rightskip}{0pt plus 5cm}Phidget\-I\-K robot\-\_\-hand\-::\-Eyes\-::phidget\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Eyes_abb8e8eb55950acd184f2dac19d2b414f}
+
+
+The phidget interface. 
+
+
+
+Definition at line 24 of file Eyes.\-h.
+
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!publisher@{publisher}}
+\index{publisher@{publisher}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher robot\-\_\-hand\-::\-Eyes\-::publisher\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Eyes_a51b35dc0b4c79b4edd8b5d0a04f57dc7}
+
+
+The publisher for the see messages. 
+
+
+
+Definition at line 26 of file Eyes.\-h.
+
+\index{robot\-\_\-hand\-::\-Eyes@{robot\-\_\-hand\-::\-Eyes}!sensor\-\_\-id@{sensor\-\_\-id}}
+\index{sensor\-\_\-id@{sensor\-\_\-id}!robot_hand::Eyes@{robot\-\_\-hand\-::\-Eyes}}
+\subsubsection[{sensor\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int robot\-\_\-hand\-::\-Eyes\-::sensor\-\_\-id\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Eyes_ac8e59c357fc881df3a6b04e805481c15}
+
+
+The sensor id. 
+
+
+
+Definition at line 25 of file Eyes.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Eyes.\-h}\item 
+{\bf Eyes.\-cpp}\end{DoxyCompactItemize}

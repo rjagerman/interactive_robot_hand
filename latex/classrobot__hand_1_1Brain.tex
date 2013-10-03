@@ -1,0 +1,193 @@
+\section{robot\-\_\-hand\-:\-:Brain Class Reference}
+\label{classrobot__hand_1_1Brain}\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}}
+
+
+{\ttfamily \#include $<$Brain.\-h$>$}
+
+
+
+Inheritance diagram for robot\-\_\-hand\-:\-:Brain\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classrobot__hand_1_1Brain__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Brain} ()
+\begin{DoxyCompactList}\small\item\em Creates a new brain. \end{DoxyCompactList}\item 
+void {\bf see} (const {\bf interactive\-\_\-robot\-\_\-hand\-::\-See\-::\-Const\-Ptr} \&message)
+\begin{DoxyCompactList}\small\item\em Callback handler for seeing objects at a distance. \end{DoxyCompactList}\item 
+void {\bf spin} ()
+\item 
+{\bf $\sim$\-Brain} ()
+\begin{DoxyCompactList}\small\item\em Destroys the brain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf grip} (float {\bf force}, bool open=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf active}
+\begin{DoxyCompactList}\small\item\em Whether the brain is ready to grasp an object. \end{DoxyCompactList}\item 
+float {\bf force}
+\begin{DoxyCompactList}\small\item\em The amount of force (in newton) to grasp the object with. \end{DoxyCompactList}\item 
+ros\-::\-Publisher {\bf publisher}
+\begin{DoxyCompactList}\small\item\em The publisher for the grip messages. \end{DoxyCompactList}\item 
+ros\-::\-Subscriber {\bf subscriber}
+\begin{DoxyCompactList}\small\item\em The subscriber for the eyes' see messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The brain class represents the logic processing unit. It subscribes to several sensors, obtaining input information. It uses the obtained information to publish events on different topics, in particular it notifies the hand that it should squeeze with a certain force. 
+
+Definition at line 21 of file Brain.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!Brain@{Brain}}
+\index{Brain@{Brain}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{Brain}]{\setlength{\rightskip}{0pt plus 5cm}Brain\-::\-Brain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Brain_a92daf9737361454abbb5988a89b7ff40}
+
+
+Creates a new brain. 
+
+
+
+Definition at line 10 of file Brain.\-cpp.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!$\sim$\-Brain@{$\sim$\-Brain}}
+\index{$\sim$\-Brain@{$\sim$\-Brain}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{$\sim$\-Brain}]{\setlength{\rightskip}{0pt plus 5cm}Brain\-::$\sim$\-Brain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Brain_af41db0fbf20565d17d36bad299ae0cac}
+
+
+Destroys the brain. 
+
+
+
+Definition at line 16 of file Brain.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!grip@{grip}}
+\index{grip@{grip}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{grip}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::grip (
+\begin{DoxyParamCaption}
+\item[{float}]{force, }
+\item[{bool}]{open = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Brain_a4b67801b848b7262b163a46732f220af}
+Sends the correct command to the hand for closing or opening the handler at the specified force. 
+\begin{DoxyParams}{Parameters}
+{\em force} & The amount of force (in newton) to apply \\
+\hline
+{\em open} & True to open the hand, false otherwise (default\-: false) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Brain.\-cpp.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!see@{see}}
+\index{see@{see}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{see}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::see (
+\begin{DoxyParamCaption}
+\item[{const {\bf interactive\-\_\-robot\-\_\-hand\-::\-See\-::\-Const\-Ptr} \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Brain_af22bce1eea5d4a8c021f88aa7c73d232}
+
+
+Callback handler for seeing objects at a distance. 
+
+Callback handler for seeing objects at a distance. The see message from the eyes describes a distance in millimeters 
+\begin{DoxyParams}{Parameters}
+{\em message} & The message send by the eyes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Brain.\-cpp.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!spin@{spin}}
+\index{spin@{spin}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{spin}]{\setlength{\rightskip}{0pt plus 5cm}void Brain\-::spin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classrobot__hand_1_1Brain_a815f20faeaa17d029f56b013603ab093}
+Reads input from the user to obtain the amount of force they want to close the hand with. After the user enters this information, this method waits until an object was close enough for the hand to close. Afterwards this function resets, allowing the user to enter a new force. 
+
+Reimplemented from {\bf Node} \doxyref{}{p.}{classNode_afd943edbdf46f7d90f31550d00e1b7b1}.
+
+
+
+Definition at line 33 of file Brain.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!active@{active}}
+\index{active@{active}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}bool robot\-\_\-hand\-::\-Brain\-::active\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Brain_a7c3324f438d5abb1008e1d50b6932369}
+
+
+Whether the brain is ready to grasp an object. 
+
+
+
+Definition at line 27 of file Brain.\-h.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!force@{force}}
+\index{force@{force}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{force}]{\setlength{\rightskip}{0pt plus 5cm}float robot\-\_\-hand\-::\-Brain\-::force\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Brain_aa0f5ea7b04e5a1237a07c8b5fc9ca450}
+
+
+The amount of force (in newton) to grasp the object with. 
+
+
+
+Definition at line 28 of file Brain.\-h.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!publisher@{publisher}}
+\index{publisher@{publisher}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher robot\-\_\-hand\-::\-Brain\-::publisher\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Brain_af1d7db6d63f7a00ef7decff5b97e8e9d}
+
+
+The publisher for the grip messages. 
+
+
+
+Definition at line 25 of file Brain.\-h.
+
+\index{robot\-\_\-hand\-::\-Brain@{robot\-\_\-hand\-::\-Brain}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!robot_hand::Brain@{robot\-\_\-hand\-::\-Brain}}
+\subsubsection[{subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber robot\-\_\-hand\-::\-Brain\-::subscriber\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Brain_aa5ee6ae5501bc09ceea1c2cb8de12a82}
+
+
+The subscriber for the eyes' see messages. 
+
+
+
+Definition at line 26 of file Brain.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Brain.\-h}\item 
+{\bf Brain.\-cpp}\end{DoxyCompactItemize}

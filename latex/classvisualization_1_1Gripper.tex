@@ -1,0 +1,202 @@
+\section{visualization\-:\-:Gripper Class Reference}
+\label{classvisualization_1_1Gripper}\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}}
+
+
+{\ttfamily \#include $<$Gripper.\-h$>$}
+
+
+
+Inheritance diagram for visualization\-:\-:Gripper\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classvisualization_1_1Gripper__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf grip} (const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State\-::\-Const\-Ptr} \&hand\-\_\-state)
+\item 
+{\bf Gripper} ()
+\begin{DoxyCompactList}\small\item\em Creates a new gripper. \end{DoxyCompactList}\item 
+void {\bf spin} ()
+\item 
+{\bf $\sim$\-Gripper} ()
+\begin{DoxyCompactList}\small\item\em Destroys the gripper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf update\-\_\-joints} (float base\-\_\-rotation, float top\-\_\-rotation)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf current\-\_\-base\-\_\-joint\-\_\-pos}
+\begin{DoxyCompactList}\small\item\em The current base joint position, used for animation. \end{DoxyCompactList}\item 
+float {\bf current\-\_\-top\-\_\-joint\-\_\-pos}
+\begin{DoxyCompactList}\small\item\em The current top joint position, used for animation. \end{DoxyCompactList}\item 
+sensor\-\_\-msgs\-::\-Joint\-State {\bf joint\-\_\-state}
+\begin{DoxyCompactList}\small\item\em The message for the state of all the joints. \end{DoxyCompactList}\item 
+ros\-::\-Publisher {\bf publisher}
+\begin{DoxyCompactList}\small\item\em The publisher for the joints in the visualization. \end{DoxyCompactList}\item 
+ros\-::\-Subscriber {\bf subscriber}
+\begin{DoxyCompactList}\small\item\em The subscriber for the hand state messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The gripper class represents the gripper in the visualization. It reads the status from the hand class and sends joint state messages to update the visualization. 
+
+Definition at line 22 of file Gripper.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!Gripper@{Gripper}}
+\index{Gripper@{Gripper}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{Gripper}]{\setlength{\rightskip}{0pt plus 5cm}Gripper\-::\-Gripper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Gripper_a697711c823c67414b3a5e97697971f18}
+
+
+Creates a new gripper. 
+
+
+
+Definition at line 9 of file Gripper.\-cpp.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!$\sim$\-Gripper@{$\sim$\-Gripper}}
+\index{$\sim$\-Gripper@{$\sim$\-Gripper}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{$\sim$\-Gripper}]{\setlength{\rightskip}{0pt plus 5cm}Gripper\-::$\sim$\-Gripper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Gripper_acdc626cc6be56560b3ce9c481cacebaa}
+
+
+Destroys the gripper. 
+
+
+
+Definition at line 19 of file Gripper.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!grip@{grip}}
+\index{grip@{grip}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{grip}]{\setlength{\rightskip}{0pt plus 5cm}void Gripper\-::grip (
+\begin{DoxyParamCaption}
+\item[{const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State\-::\-Const\-Ptr} \&}]{hand\-\_\-state}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Gripper_a533593408466a0a274c03b20b8eb7705}
+Callback handler for the hand's state. This triggers the animation for moving the joints from an open to close state or vice versa. 
+\begin{DoxyParams}{Parameters}
+{\em hand\-\_\-state} & The hand state message send by the hand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Gripper.\-cpp.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!spin@{spin}}
+\index{spin@{spin}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{spin}]{\setlength{\rightskip}{0pt plus 5cm}void Gripper\-::spin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classvisualization_1_1Gripper_aff91d307ba3986f32dca834f296c7851}
+Continuously updates the gripper joints by sending joint state messages 
+
+Reimplemented from {\bf Node} \doxyref{}{p.}{classNode_afd943edbdf46f7d90f31550d00e1b7b1}.
+
+
+
+Definition at line 67 of file Gripper.\-cpp.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!update\-\_\-joints@{update\-\_\-joints}}
+\index{update\-\_\-joints@{update\-\_\-joints}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{update\-\_\-joints}]{\setlength{\rightskip}{0pt plus 5cm}void Gripper\-::update\-\_\-joints (
+\begin{DoxyParamCaption}
+\item[{float}]{base\-\_\-rotation, }
+\item[{float}]{top\-\_\-rotation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_abca728600750fe34b454ca3b2447d4a7}
+Updates the joints by sending a joint state message to the robot state publisher 
+\begin{DoxyParams}{Parameters}
+{\em base\-\_\-rotation} & The rotation at the base of the finger \\
+\hline
+{\em top\-\_\-rotation} & The rotation at the top of the finger \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Gripper.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!current\-\_\-base\-\_\-joint\-\_\-pos@{current\-\_\-base\-\_\-joint\-\_\-pos}}
+\index{current\-\_\-base\-\_\-joint\-\_\-pos@{current\-\_\-base\-\_\-joint\-\_\-pos}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{current\-\_\-base\-\_\-joint\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}float visualization\-::\-Gripper\-::current\-\_\-base\-\_\-joint\-\_\-pos\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_a987fd5e855f993665da19a52004a43d3}
+
+
+The current base joint position, used for animation. 
+
+
+
+Definition at line 29 of file Gripper.\-h.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!current\-\_\-top\-\_\-joint\-\_\-pos@{current\-\_\-top\-\_\-joint\-\_\-pos}}
+\index{current\-\_\-top\-\_\-joint\-\_\-pos@{current\-\_\-top\-\_\-joint\-\_\-pos}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{current\-\_\-top\-\_\-joint\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}float visualization\-::\-Gripper\-::current\-\_\-top\-\_\-joint\-\_\-pos\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_a297ab359c24a8cae4e69cb538b4eac62}
+
+
+The current top joint position, used for animation. 
+
+
+
+Definition at line 30 of file Gripper.\-h.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!joint\-\_\-state@{joint\-\_\-state}}
+\index{joint\-\_\-state@{joint\-\_\-state}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{joint\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}sensor\-\_\-msgs\-::\-Joint\-State visualization\-::\-Gripper\-::joint\-\_\-state\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_a5b3510971ad5bc3d2d56d7d887629447}
+
+
+The message for the state of all the joints. 
+
+
+
+Definition at line 28 of file Gripper.\-h.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!publisher@{publisher}}
+\index{publisher@{publisher}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher visualization\-::\-Gripper\-::publisher\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_a7026fdd908ca856a4dac6e69070c16e6}
+
+
+The publisher for the joints in the visualization. 
+
+
+
+Definition at line 26 of file Gripper.\-h.
+
+\index{visualization\-::\-Gripper@{visualization\-::\-Gripper}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!visualization::Gripper@{visualization\-::\-Gripper}}
+\subsubsection[{subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber visualization\-::\-Gripper\-::subscriber\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Gripper_ac4b9971da244f0677e3c3a7423157563}
+
+
+The subscriber for the hand state messages. 
+
+
+
+Definition at line 27 of file Gripper.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Gripper.\-h}\item 
+{\bf Gripper.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+\section{Introduction}\label{index_intro_sec}
+This is the documentation for the interactive robot hand software. This software was created as part of the gripper assignment for the minor robotics.\section{Usage}\label{index_usage_sec}
+\subsection{Step 1\-: Resolve dependencies}\label{index_step1}
+To use the software make sure all dependency are correctly resolved. In particular it is necessary to have threemxl and phidget\-\_\-ik correctly compiled and working.\subsection{Step 2\-: Compile the software}\label{index_step2}
+To compile the software, simply run the following\-: 
+\begin{DoxyPre}rosmake \doxyref{interactive\_robot\_hand}{p.}{namespaceinteractive__robot__hand}\end{DoxyPre}
+\subsection{Step 3\-: Run the software}\label{index_step3}
+Run the complete solution by running the following\-: 
+\begin{DoxyPre}roslaunch \doxyref{interactive\_robot\_hand}{p.}{namespaceinteractive__robot__hand} solution.launch\end{DoxyPre}
+ Note that you will be asked to enter a force into the console when everything works correctly. After entering a force, placing an object near the gripper will cause it to grasp that object with the previously specified amount of force. In general you want the force to be somewhere between 2 and 9 newton. 

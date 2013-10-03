@@ -1,0 +1,183 @@
+\section{visualization\-:\-:Cylinder Class Reference}
+\label{classvisualization_1_1Cylinder}\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}}
+
+
+{\ttfamily \#include $<$Cylinder.\-h$>$}
+
+
+
+Inheritance diagram for visualization\-:\-:Cylinder\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classvisualization_1_1Cylinder__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cylinder} ()
+\begin{DoxyCompactList}\small\item\em Creates a new cylinder. \end{DoxyCompactList}\item 
+void {\bf grip} (const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State\-::\-Const\-Ptr} \&hand\-\_\-state)
+\item 
+void {\bf see} (const {\bf interactive\-\_\-robot\-\_\-hand\-::\-See\-::\-Const\-Ptr} \&message)
+\begin{DoxyCompactList}\small\item\em Callback handler for seeing objects at a distance. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Cylinder} ()
+\begin{DoxyCompactList}\small\item\em Destroys the cylinder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+visualization\-\_\-msgs\-::\-Marker {\bf cylinder}
+\begin{DoxyCompactList}\small\item\em The cylinder for the visualization. \end{DoxyCompactList}\item 
+ros\-::\-Subscriber {\bf eyes\-\_\-sub}
+\begin{DoxyCompactList}\small\item\em The subscriber for the eyes' see messages. \end{DoxyCompactList}\item 
+bool {\bf free}
+\begin{DoxyCompactList}\small\item\em Describes whether the cylinder is free or trapped in the hand. \end{DoxyCompactList}\item 
+ros\-::\-Subscriber {\bf hand\-\_\-sub}
+\begin{DoxyCompactList}\small\item\em The subscriber for the handstate messages. \end{DoxyCompactList}\item 
+ros\-::\-Publisher {\bf publisher}
+\begin{DoxyCompactList}\small\item\em The publisher for the visualization marker messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The cylinder class represents a cylinder in the visualization. It reads distance from the eyes and places a cylinder at the correct location in the visualization. 
+
+Definition at line 21 of file Cylinder.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!Cylinder@{Cylinder}}
+\index{Cylinder@{Cylinder}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{Cylinder}]{\setlength{\rightskip}{0pt plus 5cm}Cylinder\-::\-Cylinder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Cylinder_a01dc978cb576f834b9545e43d4dad2a2}
+
+
+Creates a new cylinder. 
+
+
+
+Definition at line 9 of file Cylinder.\-cpp.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!$\sim$\-Cylinder@{$\sim$\-Cylinder}}
+\index{$\sim$\-Cylinder@{$\sim$\-Cylinder}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{$\sim$\-Cylinder}]{\setlength{\rightskip}{0pt plus 5cm}Cylinder\-::$\sim$\-Cylinder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Cylinder_a05ab556f0ae3cd6e99d9d1f3caca80b3}
+
+
+Destroys the cylinder. 
+
+
+
+Definition at line 51 of file Cylinder.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!grip@{grip}}
+\index{grip@{grip}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{grip}]{\setlength{\rightskip}{0pt plus 5cm}void Cylinder\-::grip (
+\begin{DoxyParamCaption}
+\item[{const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State\-::\-Const\-Ptr} \&}]{hand\-\_\-state}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Cylinder_a38da86d0bf53b0fc2a5a943f8cdb00c2}
+Callback handler for the current hand state when it grips. This places the cylinder in a fixed location if the hand is closed, and frees it when the hand is open. 
+\begin{DoxyParams}{Parameters}
+{\em hand\-\_\-state} & The hand state message send by the hand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file Cylinder.\-cpp.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!see@{see}}
+\index{see@{see}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{see}]{\setlength{\rightskip}{0pt plus 5cm}void Cylinder\-::see (
+\begin{DoxyParamCaption}
+\item[{const {\bf interactive\-\_\-robot\-\_\-hand\-::\-See\-::\-Const\-Ptr} \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classvisualization_1_1Cylinder_a8cc911452f8928369c74ba1608835bb8}
+
+
+Callback handler for seeing objects at a distance. 
+
+Callback handler for seeing objects at a distance. The see message from the eyes describes a distance in millimeters 
+\begin{DoxyParams}{Parameters}
+{\em message} & The message send by the eyes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file Cylinder.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!cylinder@{cylinder}}
+\index{cylinder@{cylinder}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{cylinder}]{\setlength{\rightskip}{0pt plus 5cm}visualization\-\_\-msgs\-::\-Marker visualization\-::\-Cylinder\-::cylinder\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Cylinder_a78049d8e99e7b58456fadb49be0fcf98}
+
+
+The cylinder for the visualization. 
+
+
+
+Definition at line 27 of file Cylinder.\-h.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!eyes\-\_\-sub@{eyes\-\_\-sub}}
+\index{eyes\-\_\-sub@{eyes\-\_\-sub}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{eyes\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber visualization\-::\-Cylinder\-::eyes\-\_\-sub\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Cylinder_a6f0efd213097e8ae42c117c3550b0590}
+
+
+The subscriber for the eyes' see messages. 
+
+
+
+Definition at line 26 of file Cylinder.\-h.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!free@{free}}
+\index{free@{free}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{free}]{\setlength{\rightskip}{0pt plus 5cm}bool visualization\-::\-Cylinder\-::free\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Cylinder_aff9f4e3ff407ec41a2f6a0f4b6c997ef}
+
+
+Describes whether the cylinder is free or trapped in the hand. 
+
+
+
+Definition at line 29 of file Cylinder.\-h.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!hand\-\_\-sub@{hand\-\_\-sub}}
+\index{hand\-\_\-sub@{hand\-\_\-sub}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{hand\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber visualization\-::\-Cylinder\-::hand\-\_\-sub\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Cylinder_ac4f251376592822ed21b37277fdc08e1}
+
+
+The subscriber for the handstate messages. 
+
+
+
+Definition at line 28 of file Cylinder.\-h.
+
+\index{visualization\-::\-Cylinder@{visualization\-::\-Cylinder}!publisher@{publisher}}
+\index{publisher@{publisher}!visualization::Cylinder@{visualization\-::\-Cylinder}}
+\subsubsection[{publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher visualization\-::\-Cylinder\-::publisher\hspace{0.3cm}{\ttfamily [protected]}}\label{classvisualization_1_1Cylinder_ad0dfcb66c8d7a111be28f710dfd77617}
+
+
+The publisher for the visualization marker messages. 
+
+
+
+Definition at line 25 of file Cylinder.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Cylinder.\-h}\item 
+{\bf Cylinder.\-cpp}\end{DoxyCompactItemize}

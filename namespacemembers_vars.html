@@ -1,5 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<title>interactive_robot_hand: Interactive Robot Hand</title>
+<title>interactive_robot_hand: Namespace Members</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -15,8 +15,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -37,6 +37,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Namespace&#160;List</span></a></li>
+      <li class="current"><a href="namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespacemembers.html"><span>All</span></a></li>
+      <li><a href="namespacemembers_func.html"><span>Functions</span></a></li>
+      <li class="current"><a href="namespacemembers_vars.html"><span>Variables</span></a></li>
+      <li><a href="namespacemembers_type.html"><span>Typedefs</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -52,40 +66,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle">
-<div class="title">Interactive Robot Hand </div>  </div>
-</div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="manifest" style="padding: 5px; background-color: #eee; border: 1px solid #333; float: right; width: 25%;">
-<h3>interactive_robot_hand: interactive_robot_hand</h3>
-<p class=description><em>
-     Package for the interactive robot hand.
-     This package is part of the first assignment for the minor robotics.
-  </em></p>
-<p>
-<ul>
-<li>Homepage: <a href="http://ros.org/wiki/interactive_robot_hand">http://ros.org/wiki/interactive_robot_hand</a></li>
+&#160;<ul>
+<li>_struct_B
+: <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__HandState.html#a78dd71bfc26e539ab5d488dd06ca45d2">interactive_robot_hand::msg::_HandState</a>
+</li>
+<li>_struct_Bf
+: <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__Grip.html#a37a2d37413e1547fcdf43a3341488109">interactive_robot_hand::msg::_Grip</a>
+</li>
+<li>_struct_f
+: <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__See.html#a12cff5b90670fd9498660d8e232a87eb">interactive_robot_hand::msg::_See</a>
+</li>
+<li>_struct_I
+: <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__Grip.html#afea5fab75f537d4bd272db010b43e0ea">interactive_robot_hand::msg::_Grip</a>
+, <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__HandState.html#ac0a53271165ba90e50ae88caa1fe07af">interactive_robot_hand::msg::_HandState</a>
+, <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__See.html#aef32d6a204b2dd53a7fc3e92606e4b9b">interactive_robot_hand::msg::_See</a>
+</li>
+<li>python3
+: <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__Grip.html#a307e39c447856ddded6c8d8e27555aab">interactive_robot_hand::msg::_Grip</a>
+, <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__See.html#ae5f8b55be22313b3a15d141a3351ff3a">interactive_robot_hand::msg::_See</a>
+, <a class="el" href="namespaceinteractive__robot__hand_1_1msg_1_1__HandState.html#a5805e0112f988bfc1eafd5f1a664d57c">interactive_robot_hand::msg::_HandState</a>
+</li>
 </ul>
-</p>
-
-</div>
-<h1><a class="anchor" id="intro_sec"></a>
-Introduction</h1>
-<p>This is the documentation for the interactive robot hand software. This software was created as part of the gripper assignment for the minor robotics.</p>
-<h1><a class="anchor" id="usage_sec"></a>
-Usage</h1>
-<h2><a class="anchor" id="step1"></a>
-Step 1: Resolve dependencies</h2>
-<p>To use the software make sure all dependency are correctly resolved. In particular it is necessary to have threemxl and phidget_ik correctly compiled and working.</p>
-<h2><a class="anchor" id="step2"></a>
-Step 2: Compile the software</h2>
-<p>To compile the software, simply run the following: </p>
-<pre>rosmake <a class="el" href="namespaceinteractive__robot__hand.html">interactive_robot_hand</a></pre><h2><a class="anchor" id="step3"></a>
-Step 3: Run the software</h2>
-<p>Run the complete solution by running the following: </p>
-<pre>roslaunch <a class="el" href="namespaceinteractive__robot__hand.html">interactive_robot_hand</a> solution.launch</pre><p> Note that you will be asked to enter a force into the console when everything works correctly. After entering a force, placing an object near the gripper will cause it to grasp that object with the previously specified amount of force. In general you want the force to be somewhere between 2 and 9 newton. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 
 <br clear="all" />
 <hr size="1"><div style="align: right;">

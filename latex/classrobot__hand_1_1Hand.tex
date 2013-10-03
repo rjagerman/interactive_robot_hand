@@ -1,0 +1,191 @@
+\section{robot\-\_\-hand\-:\-:Hand Class Reference}
+\label{classrobot__hand_1_1Hand}\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}}
+
+
+{\ttfamily \#include $<$Hand.\-h$>$}
+
+
+
+Inheritance diagram for robot\-\_\-hand\-:\-:Hand\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{classrobot__hand_1_1Hand__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf grip} (const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Grip\-::\-Const\-Ptr} \&message)
+\begin{DoxyCompactList}\small\item\em Callback function for grip messages. \end{DoxyCompactList}\item 
+{\bf Hand} ()
+\begin{DoxyCompactList}\small\item\em Creates a new hand. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Hand} ()
+\begin{DoxyCompactList}\small\item\em Destroys the hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+C\-Dxl\-Config $\ast$ {\bf config}
+\begin{DoxyCompactList}\small\item\em The motor configuration. \end{DoxyCompactList}\item 
+bool {\bf gripping}
+\begin{DoxyCompactList}\small\item\em State of the hand. \end{DoxyCompactList}\item 
+C\-Dxl\-Generic $\ast$ {\bf motor}
+\begin{DoxyCompactList}\small\item\em The motor interface. \end{DoxyCompactList}\item 
+ros\-::\-Publisher {\bf publisher}
+\begin{DoxyCompactList}\small\item\em The publisher for the handstate messages. \end{DoxyCompactList}\item 
+Lx\-Serial $\ast$ {\bf serial\-\_\-port}
+\begin{DoxyCompactList}\small\item\em The serial port. \end{DoxyCompactList}\item 
+{\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State} {\bf state}
+\begin{DoxyCompactList}\small\item\em The current state of the hand (open or closed) \end{DoxyCompactList}\item 
+ros\-::\-Subscriber {\bf subscriber}
+\begin{DoxyCompactList}\small\item\em The subscriber for the grip messages from the brain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The hand is a wrapper for the 3mxl controller. It gives easy access to the underlying motor and is able to grip objects with the hand using a specific force. It internally computes the correct current for the given force. 
+
+Definition at line 23 of file Hand.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!Hand@{Hand}}
+\index{Hand@{Hand}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{Hand}]{\setlength{\rightskip}{0pt plus 5cm}Hand\-::\-Hand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Hand_aa733faf150351c640fc7d1bf460b07e9}
+
+
+Creates a new hand. 
+
+
+
+Definition at line 9 of file Hand.\-cpp.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!$\sim$\-Hand@{$\sim$\-Hand}}
+\index{$\sim$\-Hand@{$\sim$\-Hand}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{$\sim$\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}Hand\-::$\sim$\-Hand (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Hand_a7ff29a6f23f98c5e57f44d23a76912be}
+
+
+Destroys the hand. 
+
+
+
+Definition at line 36 of file Hand.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!grip@{grip}}
+\index{grip@{grip}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{grip}]{\setlength{\rightskip}{0pt plus 5cm}void Hand\-::grip (
+\begin{DoxyParamCaption}
+\item[{const {\bf interactive\-\_\-robot\-\_\-hand\-::\-Grip\-::\-Const\-Ptr} \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classrobot__hand_1_1Hand_a038ce53356625535ad0c444277cb4f7f}
+
+
+Callback function for grip messages. 
+
+Callback function for grip messages specifying a specific force. This function computes the correct current and sends the motor commands to the 3mxl board. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The message as send by the brain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file Hand.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!config@{config}}
+\index{config@{config}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}C\-Dxl\-Config$\ast$ robot\-\_\-hand\-::\-Hand\-::config\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a106e1f5a0a121b805644af13d0fb2d4f}
+
+
+The motor configuration. 
+
+
+
+Definition at line 27 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!gripping@{gripping}}
+\index{gripping@{gripping}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{gripping}]{\setlength{\rightskip}{0pt plus 5cm}bool robot\-\_\-hand\-::\-Hand\-::gripping\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a55e46010d1096fad640525e4588fdfc3}
+
+
+State of the hand. 
+
+
+
+Definition at line 32 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!motor@{motor}}
+\index{motor@{motor}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{motor}]{\setlength{\rightskip}{0pt plus 5cm}C\-Dxl\-Generic$\ast$ robot\-\_\-hand\-::\-Hand\-::motor\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a5b6fe554354f8e85e49b6201ec3d5448}
+
+
+The motor interface. 
+
+
+
+Definition at line 26 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!publisher@{publisher}}
+\index{publisher@{publisher}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher robot\-\_\-hand\-::\-Hand\-::publisher\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a7ce9350e6149b34389a1c358c9c6782d}
+
+
+The publisher for the handstate messages. 
+
+
+
+Definition at line 30 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!serial\-\_\-port@{serial\-\_\-port}}
+\index{serial\-\_\-port@{serial\-\_\-port}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{serial\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}Lx\-Serial$\ast$ robot\-\_\-hand\-::\-Hand\-::serial\-\_\-port\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a69546b3e21cc9eef9f9821eb81481bc2}
+
+
+The serial port. 
+
+
+
+Definition at line 28 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!state@{state}}
+\index{state@{state}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interactive\-\_\-robot\-\_\-hand\-::\-Hand\-State} robot\-\_\-hand\-::\-Hand\-::state\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_ae7899d6b009339b4509ae2933a0c3a3b}
+
+
+The current state of the hand (open or closed) 
+
+
+
+Definition at line 31 of file Hand.\-h.
+
+\index{robot\-\_\-hand\-::\-Hand@{robot\-\_\-hand\-::\-Hand}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!robot_hand::Hand@{robot\-\_\-hand\-::\-Hand}}
+\subsubsection[{subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber robot\-\_\-hand\-::\-Hand\-::subscriber\hspace{0.3cm}{\ttfamily [protected]}}\label{classrobot__hand_1_1Hand_a946aedc54fbdb3752ed8d2f7795b0fa9}
+
+
+The subscriber for the grip messages from the brain. 
+
+
+
+Definition at line 29 of file Hand.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Hand.\-h}\item 
+{\bf Hand.\-cpp}\end{DoxyCompactItemize}
