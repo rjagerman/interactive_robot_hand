@@ -1,8 +1,7 @@
 <package>
   <description brief="interactive_robot_hand">
-
-     Package for assignment 1: Interactive Robot Hand
-
+     Package for the interactive robot hand.
+     This package is part of the first assignment for the minor robotics.
   </description>
   <author>Rolf Jagerman</author>
   <license>BSD</license>
@@ -13,9 +12,6 @@
   <depend package="threemxl"/>
   <depend package="phidget_ik"/>
   <depend package="urdf"/>
-  <depend package="message_generation"/>
-  <depend package="rospy"/>
-  <depend package="genmsg"/>
 </package>
 
 
