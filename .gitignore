@@ -3,6 +3,7 @@ CMakeFiles
 build
 bin
 lib
+doc
 latex
 catkin_generated
 gtest

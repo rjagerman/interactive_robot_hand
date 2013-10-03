@@ -1,8 +1,0 @@
-<map id="HandState.h" name="HandState.h">
-<area shape="rect" id="node3" href="$Cylinder_8h.html" title="Cylinder.h" alt="" coords="5,83,85,112"/>
-<area shape="rect" id="node5" href="$Cylinder_8cpp.html" title="Cylinder.cpp" alt="" coords="17,160,111,189"/>
-<area shape="rect" id="node7" href="$Gripper_8h.html" title="Gripper.h" alt="" coords="160,83,235,112"/>
-<area shape="rect" id="node9" href="$Gripper_8cpp.html" title="Gripper.cpp" alt="" coords="172,160,260,189"/>
-<area shape="rect" id="node11" href="$Hand_8h.html" title="Hand.h" alt="" coords="309,83,373,112"/>
-<area shape="rect" id="node13" href="$Hand_8cpp.html" title="Hand.cpp" alt="" coords="337,160,415,189"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Node" name="Node">
-<area shape="rect" id="node3" href="$classrobot__hand_1_1Brain.html" title="robot_hand::Brain" alt="" coords="121,5,244,35"/>
-<area shape="rect" id="node5" href="$classrobot__hand_1_1Eyes.html" title="robot_hand::Eyes" alt="" coords="121,59,244,88"/>
-<area shape="rect" id="node7" href="$classrobot__hand_1_1Hand.html" title="robot_hand::Hand" alt="" coords="120,112,245,141"/>
-<area shape="rect" id="node9" href="$classvisualization_1_1Cylinder.html" title="visualization::Cylinder" alt="" coords="108,165,257,195"/>
-<area shape="rect" id="node11" href="$classvisualization_1_1Gripper.html" title="visualization::Gripper" alt="" coords="111,219,255,248"/>
-</map>
