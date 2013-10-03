@@ -1,0 +1,21 @@
+authors: Rolf Jagerman
+brief: interactive_robot_hand
+bugtracker: ''
+depends:
+- threemxl
+- phidget_ik
+- urdf
+- std_msgs
+- roscpp
+description: "\n     Package for the interactive robot hand.\n     This package is\
+  \ part of the first assignment for the minor robotics.\n  "
+license: BSD
+maintainers: ''
+msgs:
+- Grip
+- HandState
+- See
+package_type: package
+repo_url: ''
+srvs: []
+url: http://github.com/rjagerman/interactive_robot_hand
