@@ -3,6 +3,7 @@ CMakeFiles
 build
 bin
 lib
+doc
 latex
 html
 catkin_generated
