@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['grip',['Grip',['../classinteractive__robot__hand_1_1msg_1_1__Grip_1_1Grip.html',1,'interactive_robot_hand::msg::_Grip']]],
   ['grip',['grip',['../classrobot__hand_1_1Brain.html#a4b67801b848b7262b163a46732f220af',1,'robot_hand::Brain::grip()'],['../classvisualization_1_1Cylinder.html#a38da86d0bf53b0fc2a5a943f8cdb00c2',1,'visualization::Cylinder::grip()'],['../classvisualization_1_1Gripper.html#a533593408466a0a274c03b20b8eb7705',1,'visualization::Gripper::grip()'],['../classrobot__hand_1_1Hand.html#a038ce53356625535ad0c444277cb4f7f',1,'robot_hand::Hand::grip()'],['../namespaceinteractive__robot__hand.html#ad97183aba2e08ddb07dd90abc77f164d',1,'interactive_robot_hand::Grip()']]],
   ['grip_2eh',['Grip.h',['../Grip_8h.html',1,'']]],
   ['grip_5f',['Grip_',['../structinteractive__robot__hand_1_1Grip__.html',1,'interactive_robot_hand']]],

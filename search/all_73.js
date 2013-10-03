@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['see',['See',['../classinteractive__robot__hand_1_1msg_1_1__See_1_1See.html',1,'interactive_robot_hand::msg::_See']]],
   ['see',['see',['../classrobot__hand_1_1Brain.html#af22bce1eea5d4a8c021f88aa7c73d232',1,'robot_hand::Brain::see()'],['../classvisualization_1_1Cylinder.html#a8cc911452f8928369c74ba1608835bb8',1,'visualization::Cylinder::see()'],['../namespaceinteractive__robot__hand.html#a69999dbec74bedbe80d8c4ec7314fbec',1,'interactive_robot_hand::See()']]],
   ['see_2eh',['See.h',['../See_8h.html',1,'']]],
   ['see_5f',['See_',['../structinteractive__robot__hand_1_1See__.html',1,'interactive_robot_hand']]],
@@ -9,8 +8,6 @@ var searchData=
   ['seeptr',['SeePtr',['../namespaceinteractive__robot__hand.html#a36260df7f3e4fa16d9f9b22d2d6b475b',1,'interactive_robot_hand']]],
   ['sensor_5fid',['sensor_id',['../classrobot__hand_1_1Eyes.html#ac8e59c357fc881df3a6b04e805481c15',1,'robot_hand::Eyes']]],
   ['serial_5fport',['serial_port',['../classrobot__hand_1_1Hand.html#a69546b3e21cc9eef9f9821eb81481bc2',1,'robot_hand::Hand']]],
-  ['serialize',['serialize',['../classinteractive__robot__hand_1_1msg_1_1__Grip_1_1Grip.html#a3fed01b56926de19b1e6fe040f7717c3',1,'interactive_robot_hand.msg._Grip.Grip.serialize()'],['../classinteractive__robot__hand_1_1msg_1_1__HandState_1_1HandState.html#af8702badd7166e9da00612fb78725692',1,'interactive_robot_hand.msg._HandState.HandState.serialize()'],['../classinteractive__robot__hand_1_1msg_1_1__See_1_1See.html#aa1c500b21302079762036657da8e880d',1,'interactive_robot_hand.msg._See.See.serialize()']]],
-  ['serialize_5fnumpy',['serialize_numpy',['../classinteractive__robot__hand_1_1msg_1_1__Grip_1_1Grip.html#abdb6282a1cf73e5799eed0d502d09131',1,'interactive_robot_hand.msg._Grip.Grip.serialize_numpy()'],['../classinteractive__robot__hand_1_1msg_1_1__HandState_1_1HandState.html#a5daf967d55359fe5606afc5f2daabcaa',1,'interactive_robot_hand.msg._HandState.HandState.serialize_numpy()'],['../classinteractive__robot__hand_1_1msg_1_1__See_1_1See.html#a546459a45b157f54f667d25f90d02f33',1,'interactive_robot_hand.msg._See.See.serialize_numpy()']]],
   ['serializer_3c_20_3a_3ainteractive_5frobot_5fhand_3a_3agrip_5f_3c_20containerallocator_20_3e_20_3e',['Serializer&lt; ::interactive_robot_hand::Grip_&lt; ContainerAllocator &gt; &gt;',['../structros_1_1serialization_1_1Serializer_3_01_1_1interactive__robot__hand_1_1Grip___3_01ContainerAllocator_01_4_01_4.html',1,'ros::serialization']]],
   ['serializer_3c_20_3a_3ainteractive_5frobot_5fhand_3a_3ahandstate_5f_3c_20containerallocator_20_3e_20_3e',['Serializer&lt; ::interactive_robot_hand::HandState_&lt; ContainerAllocator &gt; &gt;',['../structros_1_1serialization_1_1Serializer_3_01_1_1interactive__robot__hand_1_1HandState___3_01ContainerAllocator_01_4_01_4.html',1,'ros::serialization']]],
   ['serializer_3c_20_3a_3ainteractive_5frobot_5fhand_3a_3asee_5f_3c_20containerallocator_20_3e_20_3e',['Serializer&lt; ::interactive_robot_hand::See_&lt; ContainerAllocator &gt; &gt;',['../structros_1_1serialization_1_1Serializer_3_01_1_1interactive__robot__hand_1_1See___3_01ContainerAllocator_01_4_01_4.html',1,'ros::serialization']]],
