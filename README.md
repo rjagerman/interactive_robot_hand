@@ -4,7 +4,6 @@ This github repository contains the software solution for the first assignment o
 This software uses ROS as its framework and is dependent on several packages:
 
 * roscpp
-* std_msgs
 * threemxl
 * phidgets_ik
 * rviz
