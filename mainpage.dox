@@ -8,16 +8,21 @@ This software was created as part of the gripper assignment for the minor roboti
 
 \section usage_sec Usage
 
-\subsection step1 Step 1: Resolve dependencies
+\subsection step1 Step 1: Get the software
+Get the software from github by cloning the repository, for example:
+<pre>cd ~/ros
+git clone https://github.com/rjagerman/interactive_robot_hand</pre>
+
+\subsection step2 Step 2: Resolve dependencies
 To use the software make sure all dependency are correctly resolved.
 In particular it is necessary to have threemxl and phidget_ik correctly compiled
 and working.
 
-\subsection step2 Step 2: Compile the software
+\subsection step3 Step 3: Compile the software
 To compile the software, use:
 <pre>rosmake interactive_robot_hand</pre>
 
-\subsection step3 Step 3: Run the software
+\subsection step4 Step 4: Run the software
 To run the software, use:
 <pre>roslaunch interactive_robot_hand solution.launch</pre>
 Note that you will be asked to enter a force into the console when everything works correctly.
